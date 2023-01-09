@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class GameLogic {
     private static Scanner userInput = new Scanner(System.in);
 
-    public static char getUserChar() {
-        System.out.println("Enter your guess:");
-        char letterInput = (userInput.next().charAt(0));
-        return letterInput;
+    public static char getUserChar (String message) {
+        System.out.println(message);
+        char letterInput = (userInput.nextLine().charAt(0));
+        return Character.toLowerCase(letterInput);
     }
 
 
@@ -23,27 +23,18 @@ public class GameLogic {
                 result += "_ ";
             }
         }
+
         return result;
+
     }
+
+
 
     static boolean letterChecker(String word, char inputLetter) {
         System.out.println(inputLetter);
-        boolean isLetterCorrect = false;
-        if (word.contains("" + inputLetter)) {
-            isLetterCorrect = true;
-        }
+        boolean isLetterCorrect = word.contains("" + inputLetter);
         return isLetterCorrect;
     }
 
-    static boolean wordComplete(String word) {
-        boolean isWordComplete;
-        if(word.contains("_")){
-            isWordComplete = false;
-        }
-        else {
-            return isWordComplete = true;
-        }
-        return isWordComplete;
-    }
 }
 
