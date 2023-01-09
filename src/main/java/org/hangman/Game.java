@@ -41,9 +41,10 @@ public class Game {
 
     }
 
-    // need word to equal result of guesses
-    static void winCheck(){
-        if (wordComplete(word, getWord()){
+//         need word to equal result of guesses
+    static void winCheck() {
+        if (wordComplete(word)) {
+            gameWon = true;
         }
     }
 
@@ -57,17 +58,17 @@ public class Game {
         System.out.println(replaceWord(getWord(), getLetters()));
 
         // implement getUserChar with while loop that runs as long as lives > 0 AND gameWon = false
-        while (Game.lives > 0 && !gameWon) {
-            // we need to check if index is grater than 0
+        while (Game.lives > 0 && !gameWon)
+            // we need to check if index is greater than 0
             if (index > 0) {
                 System.out.println(replaceWord(word, getLetters()));
             }
 
-            addGuessLetter(GameLogic.getUserChar());
-            // need to check if user won via a method
-            guessCheck();
-            // was input letter correct
+        addGuessLetter(GameLogic.getUserChar());
+        // need to check if user won via a method
+        guessCheck();
+        // was input letter correct
 
-        }
     }
 }
+

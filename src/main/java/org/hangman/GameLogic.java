@@ -35,10 +35,13 @@ public class GameLogic {
         return isLetterCorrect;
     }
 
-    static boolean wordComplete(String word, String result) {
-        boolean isWordComplete = false;
-        if(word == result){
-            isWordComplete = true;
+    static boolean wordComplete(String word) {
+        boolean isWordComplete;
+        if(word.contains("_")){
+            isWordComplete = false;
+        }
+        else {
+            return isWordComplete = true;
         }
         return isWordComplete;
     }
